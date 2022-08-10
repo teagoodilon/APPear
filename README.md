@@ -1,6 +1,6 @@
 <
 <p align="center">
-  <a href="https://getbootstrap.com/">
+  <a href="">
     <img src="https://cdn-icons.flaticon.com/png/512/3542/premium/3542704.png?token=exp=1660163930~hmac=557bd606bb11c714fedb4f6c33c4161a" width="70" height="70"> 
   </a>
 </p>
