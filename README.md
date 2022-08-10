@@ -1,7 +1,7 @@
 <
 <p align="center">
   <a href="">
-    <img src="https://cdn-icons.flaticon.com/png/512/3542/premium/3542704.png?token=exp=1660163930~hmac=557bd606bb11c714fedb4f6c33c4161a" width="70" height="70"> 
+    <img src="https://yata-apix-d0b7055d-022a-481a-84a2-53c9df557c80.s3-object.locaweb.com.br/6b2ed802cfee4a2fbfb5d3f00cddd78e.png" width="70" height="70"> 
   </a>
 </p>
 
