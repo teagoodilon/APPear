@@ -8,7 +8,7 @@
 <h3 align="center">APPear</h3>   
 
 
-## Sobre <img src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357329.png?token=exp=1660163775~hmac=5e8bfa29e0405b64ce13e482d0c7e3b6"  width="25" height="25"> 
+## Sobre <img src="https://www.iconsdb.com/icons/preview/royal-blue/info-xxl.png"  width="22" height="22"> 
   Pela grande quantidade de itens que são perdidos dia-a-dia na UFLA, este sistema possibilita que qualquer aluno poderá cadastrar itens que encontraram pela faculdade, também terá a opção de colocar algo que você perdeu recentemente e para ter o acesso ao sistema é preciso se cadastrar com o e-mail institucional da faculdade.
 
 
