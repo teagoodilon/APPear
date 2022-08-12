@@ -26,8 +26,8 @@
  
 ## Equipe <img src="https://cdn-icons.flaticon.com/png/512/3541/premium/3541348.png?token=exp=1660164223~hmac=5bcd89c57d420acaed978f782c3ce628"  width="25" height="25"> 
 
-Lucas Neves Saber Gabriel
+[Lucas Neves Saber Gabriel](https://github.com/lucasnves)
 
-Otávio Augusto Trindade Fonseca
+[Otávio Augusto Trindade Fonseca](https://github.com/ootaviofonseca)
 
-Thiago Odilon de Almeida
+[Thiago Odilon de Almeida](https://github.com/teagoodilon)
