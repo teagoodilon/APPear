@@ -10,6 +10,13 @@
 ## Sobre <img src="https://www.iconsdb.com/icons/preview/royal-blue/info-xxl.png"  width="22" height="22"> 
   Pela grande quantidade de itens que são perdidos dia-a-dia na UFLA, este sistema possibilita que qualquer aluno poderá cadastrar itens que encontraram pela faculdade, também terá a opção de colocar algo que você perdeu recentemente e para ter o acesso ao sistema é preciso se cadastrar com o e-mail institucional da faculdade.
 
+## Práticas de padrão de notação
+ - Utilizar Camel Case para variáveis e parâmetros dos métodos; e Pascal Case para nome de classes e métodos.
+ - Solução de bugs pela raiz.
+ - Comentários somente se necessários.
+ - Princípio da responsabilidade única.
+ - Princípio da segregação de interfaces.
+ - Evitar repetições excessivas.
 
 ## Tecnologias Utilizadas  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png"  width="25" height="25"> 
  - Vue JS 
