@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+:root {
+    --backg: #e0dcd0;
+    --escuro: #343434;
+    --azul: #042D5B;
+}
+
+body {
+    background: var(--backg);
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* LADO ESQUERDO */
+
+.ladoE {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backgroundd {
+    background: var(--azul);
+    width: 100vw;
+    height: 150vh;
+    left: -45%;
+    box-shadow: 0px 0px 30px 10px rgb(107, 107, 107);
+    transform: rotate(75deg);
+    position: absolute;
+    z-index: -1;
+}
+
+.ladoE img {
+    width: 100%;
+}
+
+.ladoE h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+    font-size: 64px;
+    color: var(--backg);
+    font-weight: 800;
+}
+
+
+
+
+/* LADO DIREITO */
+
+.ladoD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.desc .form {
+    display: flex;
+    flex-direction: column;
+    padding: 26px;
+    border-radius: 5px;
+    background: var(--escuro);
+    color: var(--backg);
+    box-shadow: 9px 9px 25px 0px rgb(117, 117, 117);
+}
+
+.desc h2 {
+    display: flex;
+    justify-content: center;
+    color: var(--backg);
+    font-size: 44px;
+    margin-bottom: 10px;
+    margin-top: -20px;
+}
+
+.desc label {
+    font-size: 22px;
+}
+
+.desc input {
+    padding: 4px;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
+    border: none;
+    outline: none;
+    background: var(--backg);
+    color: var(--escuro);
+}
+
+.desc a {
+    text-decoration: none;
+    color: var(--backg);
+}
+
+.desc .btn-cad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.btn-cad .butn {
+    color: var(--backg);
+    padding: 8px 24px;
+    background: var(--escuro);
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 4px 4px 10px 0px rgb(117, 117, 117);
+}
+
+.btn-cad .butn:hover{
+    background: #1d1d1d;
+}
+
+.btn-cad a {
+    text-decoration: none;
+    color: var(--escuro);
+    font-weight: 600;
+}
+
+
+.admin {
+    right: 7px;
+    bottom: 7px;
+    background: var(--escuro);
+    position: absolute;
+    padding: 6px;
+}
+
+.admin a {
+    text-transform: none;
+    text-decoration: none;
+    color: var(--backg);
+}
+
+.deff.fundo{
+    position: absolute;
+    top: 6px;
+    right: 7px;
+    width: 70px;
+}
+
+.deff.fundoB {
+    position: absolute;
+    top: 11px;
+    right: 43px;
+    width: 27px;
+}
+
+.deff.olhoF {
+    position: absolute;
+    top: 13px;
+    right: 47px;
+    width: 20px;
+}
+
+.deff.olhoA {
+    position: absolute;
+    top: 13px;
+    right: 19px;
+    width: 20px;
+}
