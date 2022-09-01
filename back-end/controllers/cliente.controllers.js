@@ -4,12 +4,12 @@
 import clienteServices from "../services/cliente.services.js"
 
 async function getCliente(req, res){
-    const cpf = req.params.cpf;
+    const categoria = req.params.categoria;
 
     //validar
     
     //chamar servico
-    const retorno = await clienteServices.getCliente(cpf)
+    const retorno = await clienteServices.getCliente(categoria)
     console.log(retorno)
     res.send(retorno)
 }
@@ -21,16 +21,16 @@ async function getClientes(req, res){
 }
 
 async function updateCliente(req, res){
-    const cpf = req.params.cpf
+    const categoria = req.params.categoria
     const novo = req.body
 
     //validar dados
-    if(!novo.cpf || !novo.nome || !novo.nasc || !novo.salario || !cpf){
+    if(!novo.categoria || !novo.dataPerca || !novo.descricao || !novo.fotos || !categoria){
         throw Error("FALTA DADO")
     }
 
     //chamar servico
-    const retorno = await clienteServices.updateCliente(cpf, novo)
+    const retorno = await clienteServices.updateCliente(categoria, novo)
     res.send(retorno)
     console.log(retorno)
 }
@@ -47,9 +47,9 @@ async function createCliente(req, res){
 }
 
 async function deleteCliente(req, res){
-    const cpf = req.params.cpf;
+    const categoria = req.params.categoria;
     
-    const retorno = await clienteServices.deleteCliente(cpf)
+    const retorno = await clienteServices.deleteCliente(categoria)
     console.log(retorno)
     res.send(retorno)
 }

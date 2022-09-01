@@ -31,7 +31,7 @@ async function createProduto(novo){
 
 async function deleteProduto(id){
     if(id == null || id == undefined){
-        throw Error("Defina um ID para consulta!")//VERIFICAR SE CPF VALIDO
+        throw Error("Defina um ID para consulta!")//VERIFICAR SE categoria VALIDO
     }
     
     const retorno = await produtoRepository.deleteProduto(id);    

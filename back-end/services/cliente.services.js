@@ -3,8 +3,8 @@
 //chamar o servi
 import clienteRepository from "../repositories/cliente.repository.js"
 
-async function getCliente(cpf){
-    const retorno = await clienteRepository.getCliente(cpf);   
+async function getCliente(categoria){
+    const retorno = await clienteRepository.getCliente(categoria);   
     return retorno
 } 
 
@@ -13,28 +13,28 @@ async function getClientes(){
     return retorno
 }
 
-async function updateCliente(cpf, novo){
+async function updateCliente(categoria, novo){
 
-    const retorno = await clienteRepository.updateCliente(cpf,novo);   
+    const retorno = await clienteRepository.updateCliente(categoria,novo);   
     return retorno
 }
 
 async function createCliente(novo){
-    const cliente = await getCliente(novo.cpf)
+    const cliente = await getCliente(novo.categoria)
 
     if(cliente.length > 0){
-        throw Error ("CPF ja cadastrado")
+        throw Error ("categoria ja cadastrado")
     }
     const  retorno = await clienteRepository.createCliente(novo);  
     return retorno
 }
 
-async function deleteCliente(cpf){
-    if(cpf == null || cpf == undefined){
-        throw Error("Defina um CPF para consulta!")//VERIFICAR SE CPF VALIDO
+async function deleteCliente(categoria){
+    if(categoria == null || categoria == undefined){
+        throw Error("Defina um categoria para consulta!")//VERIFICAR SE categoria VALIDO
     }
     
-    const retorno = await clienteRepository.deleteCliente(cpf);    
+    const retorno = await clienteRepository.deleteCliente(categoria);    
     return retorno
 }
 

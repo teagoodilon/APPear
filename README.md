@@ -11,7 +11,7 @@
   Pela grande quantidade de itens que são perdidos dia-a-dia na UFLA, este sistema possibilita que qualquer aluno poderá cadastrar itens que encontraram pela faculdade, também terá a opção de colocar algo que você perdeu recentemente e para ter o acesso ao sistema é preciso se cadastrar com o e-mail institucional da faculdade.
 
 ## Práticas de padrão de notação
- - Utilizar Camel Case para variáveis e parâmetros dos métodos; e Pascal Case para nome de classes e métodos.
+ - Utilizar Camel Case para variáveis e parâmetros dos métodos; e Pascal Case para dataPerca de classes e métodos.
  - Solução de bugs pela raiz.
  - Comentários somente se necessários.
  - Princípio da responsabilidade única.

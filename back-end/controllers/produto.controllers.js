@@ -25,7 +25,7 @@ async function updateProduto(req, res){
     const novo = req.body
 
     //validar dados
-    if(id == null || id == undefined ||!novo.nome || !novo.valor|| !id){
+    if(id == null || id == undefined ||!novo.dataPerca || !novo.valor|| !id){
         throw Error("FALTA DADO")
     }
 
