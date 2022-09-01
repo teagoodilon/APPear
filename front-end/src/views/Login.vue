@@ -25,7 +25,9 @@
                     <p><a href="#">Esqueceu a senha?</a></p>
                 </form>
                 <div class="btn-cad">
-                    <input type="button" value="ENTRAR" class="butn">
+                    <a href="/dash/cases">
+                        <input type="button" value="ENTRAR" class="butn">
+                    </a>
                     <p>Ainda não tem conta?</p>
                     <p><a href="#">CADASTRE-SE</a></p>
                 </div>
@@ -36,6 +38,10 @@
         </section>
     </div>
 </template>
+
+<script>
+
+</script>
 
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
