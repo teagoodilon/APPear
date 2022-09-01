@@ -1,5 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
+<template>
+    <div class="main">
+        <div class="backgroundd"></div>
+        <section class="ladoE">
+            <div>
+                <h1>APPear</h1>
+                <img src="@/assets/logo.png" alt="">
+            </div>
+        </section>
 
+        <section class="ladoD">
+            <div class="def">
+                <img src="@/assets/fundoD.png" alt="" class="deff fundo">
+                <img src="@/assets/Fundobranco.png" alt="" class="deff fundoB">
+                <img src="@/assets/olhofechado.png" alt="" class="deff olhoF">
+                <img src="@/assets/olhoaberto.png" alt="" class="deff olhoA">
+            </div>
+            <div class="desc">
+                <form class="form">
+                    <h2>LOGIN</h2>
+                    <label for="email">Email:</label>
+                    <input type="text" name="email">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha">
+                    <p><a href="#">Esqueceu a senha?</a></p>
+                </form>
+                <div class="btn-cad">
+                    <input type="button" value="ENTRAR" class="butn">
+                    <p>Ainda não tem conta?</p>
+                    <p><a href="#">CADASTRE-SE</a></p>
+                </div>
+            </div>
+            <div class="admin">
+                <p><a href="#">ENTRAR COMO ADMINISTRADOR</a></p>
+            </div>
+        </section>
+    </div>
+</template>
+
+<style scoped lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -9,25 +48,16 @@
 }
 
 body {
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-:root {
-    --backg: #e0dcd0;
-    --escuro: #343434;
-    --azul: #042D5B;
-}
-
-body {
-    background: var(--backg);
+    background: #e0dcd0;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
 
 .main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
 }
 
 section {
@@ -45,7 +75,7 @@ section {
 }
 
 .backgroundd {
-    background: var(--azul);
+    background: #042D5B;
     width: 100vw;
     height: 150vh;
     left: -45%;
@@ -64,7 +94,7 @@ section {
     justify-content: center;
     margin-bottom: 8px;
     font-size: 64px;
-    color: var(--backg);
+    color: #e0dcd0;
     font-weight: 800;
 }
 
@@ -85,15 +115,15 @@ section {
     flex-direction: column;
     padding: 26px;
     border-radius: 5px;
-    background: var(--escuro);
-    color: var(--backg);
+    background: #343434;
+    color:#e0dcd0;
     box-shadow: 9px 9px 25px 0px rgb(117, 117, 117);
 }
 
 .desc h2 {
     display: flex;
     justify-content: center;
-    color: var(--backg);
+    color: #e0dcd0;
     font-size: 44px;
     margin-bottom: 10px;
     margin-top: -20px;
@@ -111,13 +141,13 @@ section {
     width: 250px;
     border: none;
     outline: none;
-    background: var(--backg);
-    color: var(--escuro);
+    background: #e0dcd0;
+    color:#343434;
 }
 
 .desc a {
     text-decoration: none;
-    color: var(--backg);
+    color: #e0dcd0;
 }
 
 .desc .btn-cad {
@@ -128,9 +158,9 @@ section {
 }
 
 .btn-cad .butn {
-    color: var(--backg);
+    color: #e0dcd0;
     padding: 8px 24px;
-    background: var(--escuro);
+    background: #343434;
     border: none;
     border-radius: 5px;
     font-size: 24px;
@@ -145,7 +175,7 @@ section {
 
 .btn-cad a {
     text-decoration: none;
-    color: var(--escuro);
+    color: #343434;
     font-weight: 600;
 }
 
@@ -153,7 +183,7 @@ section {
 .admin {
     right: 7px;
     bottom: 7px;
-    background: var(--escuro);
+    background: #343434;
     position: absolute;
     padding: 6px;
 }
@@ -161,7 +191,7 @@ section {
 .admin a {
     text-transform: none;
     text-decoration: none;
-    color: var(--backg);
+    color: #e0dcd0;
 }
 
 .deff.fundo{
@@ -191,3 +221,4 @@ section {
     right: 19px;
     width: 20px;
 }
+</style>
