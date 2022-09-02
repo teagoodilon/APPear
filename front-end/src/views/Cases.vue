@@ -1,5 +1,7 @@
 <template>
-   <h5>TELA DE CASES</h5>
+   <body>
+      <h2>Cases de sucesso</h2>
+  </body>
 </template>
 
 <script>

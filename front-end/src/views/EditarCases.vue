@@ -1,5 +1,7 @@
 <template>
-  <h5>TELA DE EDITAR CASES</h5>
+  <body>
+    <h2>Editar cases de sucesso</h2>
+  </body>
 </template>
 
 <script>

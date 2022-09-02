@@ -1,5 +1,7 @@
 <template>
-  <h5>TELA DE BUSCAR</h5>
+   <body>
+    <h2>Buscar Item</h2>
+  </body>
 </template>
 
 <script>
