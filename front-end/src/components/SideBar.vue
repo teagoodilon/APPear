@@ -214,7 +214,6 @@ export default {
   width: 300px;
   height: 100vh;
   transition: all 0.5s cubic-bezier(0.54, -0.01, 1, 1.02);
-  background: #042D5B;
 }
 
 .abas {
