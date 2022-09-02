@@ -1,0 +1,23 @@
+{
+  "name": "appear",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <a href=\"\">\r     <img src=\"https://yata-apix-d0b7055d-022a-481a-84a2-53c9df557c80.s3-object.locaweb.com.br/6b2ed802cfee4a2fbfb5d3f00cddd78e.png\" width=\"70\" height=\"70\"> \r   </a>\r </p>",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasnves/APPear.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasnves/APPear/issues"
+  },
+  "homepage": "https://github.com/lucasnves/APPear#readme"
+}
