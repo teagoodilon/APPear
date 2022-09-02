@@ -1,5 +1,7 @@
 <template>
-  <h5>TELA DE APROVAR</h5>
+  <body>
+    <h2>Aprovar itens</h2>
+  </body>
 </template>
 
 <script>
