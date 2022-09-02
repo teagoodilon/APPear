@@ -1,20 +1,25 @@
 <template>
-  <div>
+  <div style="background-color:#042d5b;">
     <SideBar/>
     <div
       class="router-container marginSideBar300"
     >
-      </div>
       <transition name="fade" mode="out-in">
         <router-view id="router-view" />
       </transition>
     </div>
+  </div>
 </template>
 
 <script>
 import SideBar from "@/components/SideBar.vue";
 export default {
   name: "SideBarView",
+  data() {
+    return {
+      controlador: false,
+    };
+  },
   components: {
     SideBar,
   },
@@ -23,12 +28,18 @@ export default {
 
 <style lang="scss">
 #router-view {
-  background: #e0dcd0;
+  height: fit-content;
+  width: 100%;
+  background: #f8f8fb;
+  margin-left: 100px;
+  margin-top: 20px;
 }
 
 .router-container {
-  background: #e0dcd0;
+  background: #f8f8fb;
   min-height: 100vh;
+  border-top-left-radius: 50px;
+  box-shadow: 0px 3.03963px 15.1982px rgba(0, 0, 0, 0.25);
 }
 
 .fade-enter {
@@ -49,6 +60,8 @@ export default {
 .marginSideBar300 {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
   margin-left: 300px;
   transition: all 0.5s cubic-bezier(0.54, -0.01, 1, 1.02);
 }
@@ -56,6 +69,11 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+
+.logoOpacity {
+  opacity: 0;
+}
+
 
 @keyframes displayAnimation {
   from {
