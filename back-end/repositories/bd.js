@@ -6,7 +6,7 @@ async function conectar(){
         host: 'localhost',
         user: 'postgres',
         password:'1610',
-        database:'teste',
+        database:'appear',
         port: 5432
     })
     return pool.connect();
