@@ -1,18 +1,7 @@
 <template>
-  <div style="background-color:#fff">
+  <div>
     <SideBar/>
-    <div
-      class="router-container marginSideBar300"
-      :class="{ marginSideBar95: controlador }"
-    >
-      <div class="logoAssistek">
-        <img
-          :class="{ logoOpacity: !controlador }"
-          class="logo_assistek"
-          alt="Logo Assistek"
-         
-        />
-      </div>
+    <div class="router-container marginSideBar300" :class="{ marginSideBar95: controlador }">
       <transition name="fade" mode="out-in">
         <router-view id="router-view" />
       </transition>
@@ -37,16 +26,12 @@ export default {
 
 <style lang="scss">
 #router-view {
-  height: fit-content;
-  width: 100%;
-  background: #f8f8fb;
+  background: #e0dcd0;
 }
 
 .router-container {
-  background: #f8f8fb;
+  background: #e0dcd0;
   min-height: 100vh;
-  border-top-left-radius: 50px;
-  box-shadow: 0px 3.03963px 15.1982px rgba(0, 0, 0, 0.25);
 }
 
 .fade-enter {
@@ -64,16 +49,9 @@ export default {
   opacity: 0;
 }
 
-.logoAssistek{
-  display: flex;
-  width: 100%;
-}
-
 .marginSideBar300 {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
   margin-left: 300px;
   transition: all 0.5s cubic-bezier(0.54, -0.01, 1, 1.02);
 }
@@ -81,11 +59,6 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-
-.logoOpacity {
-  opacity: 0;
-}
-
 
 @keyframes displayAnimation {
   from {
