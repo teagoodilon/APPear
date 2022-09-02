@@ -26,7 +26,6 @@ const routes = [
     path: "/dash",
     name: "Dashboard",
     component: SideBarView,
-    redirect: '/dash/tabela',
     children: [
       {
         path: "/dash/cases",
