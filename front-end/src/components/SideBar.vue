@@ -1,8 +1,8 @@
 <template>
   <div class="sideBarComponent">
     <div id="sidebar-dash">
+
       <b-row class="px-4 py-4" style="margin-top: 10px">
-        
       </b-row>
 
       <router-link
@@ -133,29 +133,7 @@
 
       
       <a @click="deslogar" class="abas" style="margin-top: auto; margin-bottom: 20px">
-        <!-- Sair-- Oitava aba-->
-        <b-row class="aba_sair px-4 py-2">
-          <b-col class="espaco_icone" md="3">
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 87 79"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="icones_fill"
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M38.7018 0.866806H77.4028C82.1458 0.866806 86.003 4.72401 86.003 9.46703V69.6686C86.003 74.4116 82.1458 78.2688 77.4028 78.2688H38.7018C33.9588 78.2688 30.1016 74.4116 30.1016 69.6686V52.4682H38.7018V69.6686H77.4028V9.46703H38.7018V26.6675H30.1016V9.46703C30.1016 4.72401 33.9588 0.866806 38.7018 0.866806ZM21.5006 35.268H60.2016V43.8682H21.5006V56.7686L0 39.5681L21.5006 22.3677V35.268Z"
-                fill="black"
-              />
-            </svg>
-          </b-col>
-          <b-col class="abas_text" md="4"
-            >Sair</b-col
-          >
-        </b-row>
+        <b-col class="abas_text_sair" md="4">SAIR</b-col>
       </a>
     </div>
   </div>
@@ -231,111 +209,53 @@ export default {
 #sidebar-dash {
   display: flex;
   flex-direction: column;
-  top: 0;
-  left: 0;
+  align-items: center;
+  justify-content: center;
   width: 300px;
-  max-width: 100%;
   height: 100vh;
-  max-height: 100%;
   transition: all 0.5s cubic-bezier(0.54, -0.01, 1, 1.02);
-}
-
-.icone_menu {
-  cursor: pointer;
-  margin-left: -15px;
-  animation: displayAnimation 0.9s ease-in;
-}
-
-.rotate_menu {
-  margin-left: 30px;
-  transform: rotate(180deg);
-  animation: displayAnimation 0.9s ease-in;
-}
-
-.logo_assistek {
-  width: 170px;
-  left: 0px;
-  z-index: 30;
-  position: fixed;
-  margin-left: 96px;
-  margin-top: -6px;
-  transition: all 0.5s ease;
-  animation: displayAnimation 0.9s ease-in;
+  background: #042D5B;
 }
 
 .abas {
-  display: block;
-  margin-right: 10px;
-  border-radius: 0px 50px 50px 0px;
+  max-width: 240px;
   text-decoration: none !important;
-  color: #181717 !important;
-  transition: all 0.5s ease;
-}
-
-.icones {
+  color: #e0dcd0 !important;
   transition: all 0.5s ease;
   animation: displayAnimation 0.9s ease-in;
 }
 
 .abas:hover {
-  color: #e5592d !important;
-  background: #fae8e6;
+  cursor: pointer;
+  color: #222222 !important;
+  background: #A6D1E6;
   .abas_text {
-    font-weight: 600;
-  }
-  .icones {
-    stroke: #e5592d !important;
-  }
-  .icones_fill {
-    fill: #e5592d !important;
+    font-weight: 400;
   }
 }
 
 .ativo {
-  color: #e5592d !important;
-  background: #fae8e6;
+  color: #222222 !important;
+  background: #A6D1E6;
   .abas_text {
     font-weight: 600;
-  }
-  .icones {
-    stroke: #e5592d !important;
-  }
-  .icones_fill {
-    fill: #e5592d !important;
   }
 }
 
 .abas_text {
-  font-size: 19px;
-  font-family: Inter;
-  font-weight: 300;
+  left: -72px;
+  padding: 10px 80px;
+  font-size: 16px;
+  font-weight: 500;
   white-space: nowrap;
-  margin-left: -15px;
   animation: displayAnimation 0.9s ease-in;
 }
 
-</style>
-
-<style lang="scss">
-
-
-.sideCollapse {
-  display: none;
+.abas_text_sair {
+  padding: 10px 50px;
 }
 
 .sideBarComponent {
-  text-align: left;
   position: fixed;
-  z-index: 1;
-}
-
-.row {
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-}
-
-.aba_sair {
-  cursor: pointer;
-  align-items: center;
 }
 </style>

@@ -31,7 +31,7 @@
 
 <style scoped>
 body{
-  margin-left: 100px;
+  margin-left: 10px;
 }
 </style>
 
