@@ -7,7 +7,11 @@ import Cases from "@/views/Cases.vue";
 import Perdidos from "@/views/Perdidos.vue";
 import Encontrados from "@/views/Encontrados.vue";
 import Buscar from "@/views/Buscar.vue";
-import MeusItens from "@/views/MeusItens.vue";
+import Aprovar from "@/views/Aprovar.vue";
+import Cadastrados from "@/views/Cadastrados.vue";
+import EditarCases from "@/views/EditarCases.vue";
+import NovoAdmin from "@/views/NovoAdmin.vue";
+import Devolvidos from "@/views/Devolvidos.vue";
 
 Vue.use(VueRouter);
 
@@ -45,9 +49,29 @@ const routes = [
         component: Buscar,
       },
       {
-        path: "/dash/meusItens",
-        name: "MeusItens",
-        component: MeusItens,
+        path: "/dash/aprovar",
+        name: "Aprovar",
+        component: Aprovar,
+      },
+      {
+        path: "/dash/cadastrados",
+        name: "Cadastrados",
+        component: Cadastrados,
+      },
+      {
+        path: "/dash/editar-case",
+        name: "EditarCase",
+        component: EditarCases,
+      },
+      {
+        path: "/dash/novo-admin",
+        name: "NovoAdmin",
+        component: NovoAdmin,
+      },
+      {
+        path: "/dash/devolvidos",
+        name: "Devolvidos",
+        component: Devolvidos,
       }
     ]
   },

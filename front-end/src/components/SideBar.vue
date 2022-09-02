@@ -5,24 +5,130 @@
       <b-row class="px-4 py-4" style="margin-top: 10px">
       </b-row>
 
-      <router-link class="abas" to="/dash/cases" v-on:click.native="handleChangePage(0)" :class="{ ativo: isActive[0] }">
-      <b-col  class="abas_text" md="4">Cases de sucesso</b-col>
+      <router-link
+        class="abas"
+        to="/dash/cases"
+        v-on:click.native="handleChangePage(0)"
+        :class="{ ativo: isActive[0] }"
+      >
+        <!-- Cases de sucesso -- Primeira aba-->
+        <b-row class="align-items-center menu-box px-4 py-2">
+          <b-col  class="abas_text" md="4">
+            Cases de sucesso</b-col>
+        </b-row>
       </router-link>
 
-      <router-link class="abas" to="/dash/perdidos" v-on:click.native="handleChangePage(1)" :class="{ ativo: isActive[1] }">
-      <b-col class="abas_text" md="4">Cadastrar item perdido</b-col>
+      <router-link
+        class="abas"
+        to="/dash/perdidos"
+        v-on:click.native="handleChangePage(1)"
+        :class="{ ativo: isActive[1] }"
+      >
+        <!-- Cadastrar item perdido -- Segunda aba-->
+        <b-row class="align-items-center menu-box px-4 py-2">
+          <b-col class="abas_text" md="4"
+            >Cadastrar item perdido</b-col
+          >
+        </b-row>
       </router-link>
 
-      <router-link class="abas" to="/dash/encontrados" v-on:click.native="handleChangePage(2)" :class="{ ativo: isActive[2] }">
-      <b-col class="abas_text" md="4">Cadastrar item encontrado</b-col>
+      <router-link
+        class="abas"
+        to="/dash/encontrados"
+        v-on:click.native="handleChangePage(2)"
+        :class="{ ativo: isActive[2] }"
+      >
+        <!-- Cadastrar item encontrado -- Terceira aba-->
+        <b-row class="align-items-center menu-box px-4 py-2">
+          <b-col class="abas_text" md="4"
+            >Cadastrar item encontrado</b-col
+          >
+        </b-row>
       </router-link>
 
-      <router-link class="abas" to="/dash/buscar" v-on:click.native="handleChangePage(3)" :class="{ ativo: isActive[3] }">
-      <b-col class="abas_text" md="4">Buscar Item</b-col>
+      <router-link
+        class="abas"
+        to="/dash/buscar"
+        v-on:click.native="handleChangePage(3)"
+        :class="{ ativo: isActive[3] }"
+      >
+        <!-- Buscar item -- Quarta aba-->
+        <b-row class="align-items-center menu-box px-4 py-2">
+          
+          <b-col class="abas_text" md="4"
+            >Buscar Item</b-col
+          >
+        </b-row>
       </router-link>
 
-      <router-link class="abas" to="/dash/meusItens" v-on:click.native="handleChangePage(4)" :class="{ ativo: isActive[4] }">
-      <b-col class="abas_text" md="4">Meus Itens</b-col>
+      <router-link
+        class="abas"
+        to="/dash/aprovar"
+        v-on:click.native="handleChangePage(4)"
+        :class="{ ativo: isActive[4] }"
+      >
+        <!-- Aprovar itens -- Quinta aba-->
+        <b-row class="align-items-center menu-box px-4 py-2">
+          <b-col class="abas_text" md="4"
+            >Aprovar itens cadastrados</b-col
+          >
+        </b-row>
+      </router-link>
+
+       <router-link
+        class="abas"
+        to="/dash/cadastrados"
+        v-on:click.native="handleChangePage(5)"
+        :class="{ ativo: isActive[5] }"
+      >
+        <!-- Itens cadastrados -- Quinta aba-->
+        <b-row class="align-items-center menu-box px-4 py-2">
+          <b-col class="abas_text" md="4"
+            >Itens cadastrados</b-col
+          >
+        </b-row>
+      </router-link>
+
+       <router-link
+        class="abas"
+        to="/dash/editar-case"
+        v-on:click.native="handleChangePage(6)"
+        :class="{ ativo: isActive[6] }"
+      >
+        <!-- Editar cases -- Quinta aba-->
+        <b-row class="align-items-center menu-box px-4 py-2">
+          <b-col class="abas_text" md="4"
+            >Editar cases</b-col
+          >
+        </b-row>
+      </router-link>
+
+       <router-link
+        class="abas"
+        to="/dash/novo-admin"
+        v-on:click.native="handleChangePage(7)"
+        :class="{ ativo: isActive[7] }"
+      >
+        <!-- Cadastrar novo admin -- Quinta aba-->
+        <b-row class="align-items-center menu-box px-4 py-2">
+          <b-col class="abas_text" md="4"
+            >Cadastrar novo admin</b-col
+          >
+        </b-row>
+      </router-link>
+
+       <router-link
+        class="abas"
+        to="/dash/devolvidos"
+        v-on:click.native="handleChangePage(8)"
+        :class="{ ativo: isActive[8] }"
+      >
+        <!-- Itens devolvidos -- Quinta aba-->
+        <b-row class="align-items-center menu-box px-4 py-2">
+          <b-col class="abas_text" md="4"
+            >Itens devolvidos</b-col
+          >
+        </b-row>
       </router-link>
 
       
@@ -51,11 +157,11 @@ export default {
       flipControladorSidebar: 'flipControladorSidebar'
     }),
     handleChangePage(index) {
-      this.isActive = [0, 0, 0, 0, 0, 0, 0];
+      this.isActive = [0, 0, 0, 0, 0, 0, 0, 0];
       this.isActive[index] = 1;
     },
     optionChange(route) {
-      this.isActive = [0, 0, 0, 0, 0, 0, 0];
+      this.isActive = [0, 0, 0, 0, 0, 0, 0, 0];
       switch (route) {
         case "/dash/cases":
           this.isActive[0] = 1;
@@ -69,9 +175,22 @@ export default {
         case "/dash/buscar":
           this.isActive[3] = 1;
           break;
-        case "/dash/meusItens":
+        case "/dash/aprovar":
           this.isActive[4] = 1;
           break;
+        case "/dash/cadastrados":
+          this.isActive[5] = 1;
+          break;
+        case "/dash/editar-case":
+          this.isActive[6] = 1;
+          break;
+        case "/dash/novo-admin":
+          this.isActive[7] = 1;
+          break;
+        case "/dash/devolvidos":
+          this.isActive[8] = 1;
+          break;
+        
       }
     },
      deslogar() {
@@ -103,7 +222,7 @@ export default {
   text-decoration: none !important;
   color: #e0dcd0 !important;
   transition: all 0.5s ease;
-  background: #010F1E;
+  animation: displayAnimation 0.9s ease-in;
 }
 
 .abas:hover {

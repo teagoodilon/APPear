@@ -1,5 +1,6 @@
 <template>
-    <div class="main">
+    <div id="main">
+        <div class="backgroundd"></div>
         <section class="ladoE">
             <img src="@/assets/back.png" alt="fundo" class="backgroundd">
             <div>
@@ -50,11 +51,18 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-.main {
+
+body {
+    background: #e0dcd0;
+}
+
+#main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
 section {
     width: 100%;
