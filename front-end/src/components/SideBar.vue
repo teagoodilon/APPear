@@ -81,7 +81,7 @@
         v-on:click.native="handleChangePage(5)"
         :class="{ ativo: isActive[5] }"
       >
-        <!-- Itens cadastrados -- Quinta aba-->
+        <!-- Itens cadastrados -- Sexta aba-->
         <b-row class="align-items-center menu-box px-4 py-2">
           <b-col class="abas_text" md="4"
             >Itens cadastrados</b-col
@@ -95,7 +95,7 @@
         v-on:click.native="handleChangePage(6)"
         :class="{ ativo: isActive[6] }"
       >
-        <!-- Editar cases -- Quinta aba-->
+        <!-- Editar cases -- Sétima aba-->
         <b-row class="align-items-center menu-box px-4 py-2">
           <b-col class="abas_text" md="4"
             >Editar cases</b-col
@@ -109,7 +109,7 @@
         v-on:click.native="handleChangePage(7)"
         :class="{ ativo: isActive[7] }"
       >
-        <!-- Cadastrar novo admin -- Quinta aba-->
+        <!-- Cadastrar novo admin -- Oitava aba-->
         <b-row class="align-items-center menu-box px-4 py-2">
           <b-col class="abas_text" md="4"
             >Cadastrar novo admin</b-col
@@ -123,7 +123,7 @@
         v-on:click.native="handleChangePage(8)"
         :class="{ ativo: isActive[8] }"
       >
-        <!-- Itens devolvidos -- Quinta aba-->
+        <!-- Itens devolvidos -- Nona aba-->
         <b-row class="align-items-center menu-box px-4 py-2">
           <b-col class="abas_text" md="4"
             >Itens devolvidos</b-col

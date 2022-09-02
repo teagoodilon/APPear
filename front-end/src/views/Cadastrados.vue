@@ -1,5 +1,7 @@
 <template>
-  <h5>TELA DE CADASTRADOS</h5>
+  <body>
+    <h2>Itens cadastrados</h2>
+  </body>
 </template>
 
 <script>

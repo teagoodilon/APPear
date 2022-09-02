@@ -1,5 +1,7 @@
 <template>
-  <h5>TELA DE NOVO ADMIN</h5>
+  <body>
+    <h2>Cadastrar novo admin</h2>
+  </body>
 </template>
 
 <script>
