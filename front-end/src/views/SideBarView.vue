@@ -3,32 +3,18 @@
     <SideBar/>
     <div
       class="router-container marginSideBar300"
-      :class="{ marginSideBar95: controlador }"
     >
-      <div class="logoAssistek">
-        <img
-          :class="{ logoOpacity: !controlador }"
-          class="logo_assistek"
-          alt="Logo Assistek"
-         
-        />
       </div>
       <transition name="fade" mode="out-in">
         <router-view id="router-view" />
       </transition>
     </div>
-  </div>
 </template>
 
 <script>
 import SideBar from "@/components/SideBar.vue";
 export default {
   name: "SideBarView",
-  data() {
-    return {
-      controlador: false,
-    };
-  },
   components: {
     SideBar,
   },

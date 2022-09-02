@@ -216,7 +216,7 @@ export default {
       }
     },
      deslogar() {
-      this.$router.push("/login");
+      this.$router.push("/");
     }
   },
   computed: {

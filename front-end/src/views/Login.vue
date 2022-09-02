@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div id="main">
         <div class="backgroundd"></div>
         <section class="ladoE">
             <div>
@@ -55,15 +55,15 @@
 
 body {
     background: #e0dcd0;
-    overflow-x: hidden !important;
-    overflow-y: hidden !important;
 }
 
-.main {
+#main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80vh;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
 
 section {
