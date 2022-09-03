@@ -1,6 +1,7 @@
 
 import Vue from "vue";
 import VueRouter from "vue-router";
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import Login from "@/views/Login.vue";
 import SideBarView from "@/views/SideBarView.vue";
 import Cases from "@/views/Cases.vue";
@@ -14,6 +15,8 @@ import NovoAdmin from "@/views/NovoAdmin.vue";
 import Devolvidos from "@/views/Devolvidos.vue";
 
 Vue.use(VueRouter);
+Vue.use(BootstrapVue);
+Vue.use(BootstrapVueIcons);
 
 const routes = [
 
