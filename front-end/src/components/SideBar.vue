@@ -98,7 +98,7 @@
         <!-- Editar cases -- Sétima aba-->
         <b-row class="align-items-center menu-box px-4 py-2">
           <b-col class="abas_text" md="4"
-            >Editar cases</b-col
+            >Editar cases de sucesso</b-col
           >
         </b-row>
       </router-link>
@@ -206,6 +206,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.row{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
 #sidebar-dash {
   display: flex;
   flex-direction: column;
@@ -217,10 +222,11 @@ export default {
 }
 
 .abas {
-  max-width: 240px;
+  max-width: 300px !important; 
   text-decoration: none !important;
   color: #e0dcd0 !important;
   transition: all 0.5s ease;
+  border-radius: 0px 50px 50px 0px;
   animation: displayAnimation 0.9s ease-in;
 }
 
@@ -243,9 +249,10 @@ export default {
 
 .abas_text {
   left: -72px;
-  padding: 10px 80px;
+  padding: 5px 75px;
+  font-family: Montserrat;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 500 !important;
   white-space: nowrap;
   animation: displayAnimation 0.9s ease-in;
 }
