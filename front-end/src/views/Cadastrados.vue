@@ -55,7 +55,7 @@
   export default {
     data() {
       return {
-      perPage: 7,
+      perPage: 6,
       currentPage: 1,
       selected: [],
       fields: [
@@ -112,6 +112,14 @@
 </script>
 
 <style lang="scss">
+  
+h2{
+  font-family: MontSerrat;
+  font-weight: bold !important;
+  font-size: 40px !important;
+  margin-bottom: 35px !important;
+  color:#042d5b !important;
+}
 
 .table{
   width: 90% !important;
@@ -122,14 +130,14 @@ thead{
   background: #042d5b !important;
 }
 
-.th-situacao, .th-categoria, .th-descricao, .th-buttons{
+.th-situacao, .th-categoria, .th-descricao, .th-buttons, .th-perca, .th-encontro, .th-dataFinalizacao{
   border: 3px solid#042d5b !important;
   color: white;
   text-align: center;
   font-family: Montserrat;
 }
 
-.situacao, .categoria, .descricao, .buttons{
+.situacao, .categoria, .descricao, .buttons, .perca, .encontro, .dataFinalizacao{
   border-right: 3px solid#042d5b !important;
   border-left: 3px solid#042d5b !important;
   text-align: center;

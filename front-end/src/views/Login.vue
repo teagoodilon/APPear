@@ -17,7 +17,7 @@
             </div>
             <div class="desc">
                 <form class="form">
-                    <h2>LOGIN</h2>
+                    <h1>LOGIN</h1>
                     <label for="email">Email:</label>
                     <input type="text" name="email">
                     <label for="senha">Senha:</label>
