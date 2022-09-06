@@ -9,7 +9,8 @@
         :per-page="perPage"
         :items="items"
         :fields="fields"
-        :current-page="currentPage">
+        :current-page="currentPage"
+        @row-clicked = "editar">
         <template #cell(buttons)>
           <div class="div-todos-ico">
               <div class="div-icones">
@@ -27,7 +28,7 @@
                 </a>
               </div>
               <div class="div-icones">
-                <a>
+                <a @click.prevent="deletar" >
                   <b-icon-trash class="icons" scale="1"/>
                   <b class="excluir">excluir</b>
                 </a>
@@ -35,6 +36,15 @@
             </div>
         </template>
       </b-table>
+
+      <b-modal id = "modal-editar">
+        <b-form-input v-model = "dados.status"></b-form-input>
+        <b-form-input v-model = "dados.categoria" class="mt-2"></b-form-input>
+        <b-form-input v-model = "dados.descricao" class="mt-2"></b-form-input>
+        <b-button @click="deletar" class="mt-5">Excluir</b-button>
+        <b-button @click="editarItem" class="mt-5">Editar</b-button>
+      </b-modal>
+
       </b-row>
     <b-row class="justify-content-end">
       <b-pagination
@@ -52,6 +62,7 @@
 </template>
 
 <script>
+  import {getItens, deleteItem, putItem} from "@/services/api/item.js"
   export default {
     data() {
       return {
@@ -60,9 +71,15 @@
       selected: [],
       fields: [
         {
-          key: 'situacao',
+          key: 'itemid',
+          label: 'itemid',
+          tdClass: 'itemid',
+          thClass: 'th-situacao',
+        },
+        {
+          key: 'status',
           label: 'Situação',
-          tdClass: 'situacao',
+          tdClass: 'status',
           thClass: 'th-situacao',
         },
         {
@@ -85,23 +102,55 @@
         },
       ],
       items: [
-        {situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {situacao: 'Perdido', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {situacao: 'Perdido', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {situacao: 'Perdido', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {situacao: 'Perdido', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-      ]
+        /*{situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
+        */
+      ],
+
+      dados:{
+        status: '',
+        categoria:'',
+        descricao:'',
+      }
     }
+    
   },
+  methods: {
+    deletar(){
+      deleteItem(this.dados.itemid)
+      .then(()=>{
+        alert('deletado')
+      }).catch((err)=>{
+        console.error(err)
+      });
+      this.$bvModal.hide("modal-editar");
+    },
+
+    editarItem(){
+      putItem(this.dados.itemid,this.dados)
+      .then(()=>{
+        alert('editado')
+      }).catch((err)=>{
+        console.error(err)
+      });
+      this.$bvModal.hide("modal-editar");
+    },
+
+    editar(item){
+      this.dados = item;
+      this.$bvModal.show("modal-editar");
+    }
+    
+  },
+ 
+  mounted(){
+            getItens()
+                .then((res)=>{
+                    this.items = res.data;
+                })
+                .catch((err)=>{
+                    console.log(err);
+                });
+        },
   computed: {
     rows() {
       return this.items.length

@@ -25,12 +25,12 @@ async function updateItem(req, res){
     const novo = req.body
 
     //validar dados
-    if(!novo.categoria || !novo.descricao || !novo.data || !novo.fotos || !novo.status || !itemid){
+    if(!novo.status || !novo.categoria || !novo.descricao ||  !itemid ){
         throw Error("FALTA DADO")
     }
-
     //chamar servico
     const retorno = await itemServices.updateItem(itemid, novo)
+    
     res.send(retorno)
     console.log(retorno)
 }

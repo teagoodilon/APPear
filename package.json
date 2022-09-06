@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/lucasnves/APPear/issues"
   },
-  "homepage": "https://github.com/lucasnves/APPear#readme"
+  "homepage": "https://github.com/lucasnves/APPear#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "vue": "^3.2.38"
+  }
 }

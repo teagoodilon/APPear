@@ -31,7 +31,7 @@ async function createItem(novo){
 
 async function deleteItem(itemid){
     if(itemid == null || itemid == undefined){
-        throw Error("Defina um CPF para consulta!")//VERIFICAR SE CPF VALIDO
+        throw Error("Defina um ID para consulta!")//VERIFICAR SE CPF VALIDO
     }
     
     const retorno = await itemRepository.deleteItem(itemid);    

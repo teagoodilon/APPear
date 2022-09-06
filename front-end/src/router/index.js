@@ -14,6 +14,7 @@ import EditarCases from "@/views/EditarCases.vue";
 import NovoAdmin from "@/views/NovoAdmin.vue";
 import Devolvidos from "@/views/Devolvidos.vue";
 
+
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 Vue.use(BootstrapVueIcons);
@@ -74,7 +75,7 @@ const routes = [
         path: "/dash/devolvidos",
         name: "Devolvidos",
         component: Devolvidos,
-      }
+      },
     ]
   },
 ];
