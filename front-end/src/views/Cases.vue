@@ -70,7 +70,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
    .cases {
       display: flex;
       position: relative;
