@@ -11,30 +11,22 @@
         :fields="fields"
         :current-page="currentPage"
         @row-clicked = "editar">
-          <template #cell(buttons)>
-            <div class="div-todos-ico">
-                <div class="div-icones">
-                  <b class="margem-entre">
-                    <b-icon-check class="icons" scale="2" />
-                    <b class="finalizar">finalizar</b>
-                  </b>
-                </div>
-                <div class="div-icones">
-                  <a @click.prevent="excluir" >
-                    <b class="margem-entre">
-                      <b-icon-camera class="icons" scale="1.2" />
-                      <b class="fotos">fotos</b>
-                    </b>
-                  </a>
-                </div>
-                <div class="div-icones">
-                  <a @click.prevent="deletar" >
-                    <b-icon-trash class="icons" scale="1"/>
-                    <b class="excluir">excluir</b>
-                  </a>
-                </div>     
-              </div>
-          </template>
+        <template #cell(buttons)>
+          <div class="div-todos-ico">
+            <div class="div-icones">
+              <b class="margem-entre">
+                <b-icon-check class="icons" scale="2" />
+                <b class="finalizar">finalizar</b>
+              </b>
+            </div>
+            <div class="div-icones">
+              <b class="margem-entre">
+                <b-icon-pin-angle class="icons" scale="1.2" />
+                <b class="fotos">editar</b>
+              </b>
+            </div>
+          </div>
+        </template>
         </b-table>
         <b-modal id = "modal-editar" hide-footer>
           <template #modal-title>
@@ -131,6 +123,7 @@
           console.error(err)
         });
       this.$bvModal.hide("modal-editar");
+
     },
 
     editar(item){
@@ -153,7 +146,7 @@
     rows() {
       return this.items.length
     }
-  }
+  },
 }
 
 </script>

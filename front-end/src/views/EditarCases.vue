@@ -13,14 +13,14 @@
         <template #cell(buttons)>
           <div class="div-todos-ico">
               <div class="div-icones">
-                <a>
+                <a @click="deletar">
                   <b-icon-trash class="icons" scale="1"/>
                   <b class="excluir">excluir</b>
                 </a>
               </div>     
             </div>
         </template>
-        </b-table>
+      </b-table>
       </b-row>
     <b-row class="justify-content-end">
       <b-pagination
@@ -34,6 +34,12 @@
       />
     </b-row>
     </b-container>
+    <b-modal id="modalDeletar" hide-footer>
+      <div class="d-block text-center">
+        <h3>Item apagado com sucesso</h3>
+      </div>
+      <b-button @click="hide" class="mt-3 botaoModal" block>Ok</b-button>
+    </b-modal>
   </body>
 </template>
 
@@ -92,6 +98,14 @@
     rows() {
       return this.items.length
     }
+  },
+  methods: {
+    deletar(){
+      this.$bvModal.show("modalDeletar");
+    },
+    hide() {
+      this.$bvModal.hide("modalDeletar");
+    },
   }
 }
 
