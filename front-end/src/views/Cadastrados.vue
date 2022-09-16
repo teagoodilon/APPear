@@ -41,7 +41,13 @@
             Item cadastrado
           </template>
           <b-form-input v-model = "dados.status"></b-form-input>
-          <b-form-input v-model = "dados.categoria" class="mt-2"></b-form-input>
+          <b-form-select
+          :options="[{ text: 'Selecione a categoria do item', value:null}, 'Vestuário', 'Eletrônico', 'Acessório', 'Documento', 'Outros']"
+          :value="null"
+          type="text"
+          v-model = "dados.categoria"
+          class="mt-2"
+          ></b-form-select>
           <b-form-input v-model = "dados.descricao" class="mt-2"></b-form-input>
 
           <b-button @click="deletar" class="mt-3 botaoModal" block>Excluir</b-button>
@@ -97,11 +103,7 @@
           thClass: 'th-buttons',
         },
       ],
-      items: [
-        /*{situacao: 'Encontrado', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        */
-      ],
-
+      items: [],
       dados:{
         status: '',
         categoria:'',

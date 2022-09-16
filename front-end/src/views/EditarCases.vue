@@ -20,7 +20,7 @@
               </div>     
             </div>
         </template>
-      </b-table>
+        </b-table>
       </b-row>
     <b-row class="justify-content-end">
       <b-pagination
