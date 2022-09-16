@@ -1,7 +1,7 @@
 <template>
    <body>
-      <div class="tituloo">
-         <h1>CASES DE SUCESSO</h1>
+      <div>
+         <h2>Cases de Sucesso</h2>
       </div>
       <div class="cases">
          <carousel
