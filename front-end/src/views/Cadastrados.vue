@@ -73,12 +73,6 @@
       selected: [],
       fields: [
         {
-          key: 'itemid',
-          label: 'itemid',
-          tdClass: 'itemid',
-          thClass: 'th-situacao',
-        },
-        {
           key: 'status',
           label: 'Situação',
           tdClass: 'status',

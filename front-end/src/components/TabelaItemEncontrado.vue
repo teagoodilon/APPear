@@ -1,7 +1,7 @@
 <template>
 
   <body>
-    <h2>Cadastrar item perdido</h2>
+    <h2>Cadastrar item encontrado</h2>
     <b-card id="card">
       <form action="http://localhost:3000/item" method="post">
         <label for="categoria">Categoria do item:</label><br>
@@ -15,7 +15,7 @@
         
         <label for="descricao">Descrição do item:</label><br>
         <b-form-input type="text" id="descricao" name="descricao" ></b-form-input><br>
-          <label for="dataPerca">Quando foi perdido:</label><br>
+          <label for="dataPerca">Quando foi encontrado:</label><br>
           <input type="date" id="data" name="data" ><br><br>
           
           <label for="fotos">Fotos:</label><br>
