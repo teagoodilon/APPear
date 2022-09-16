@@ -42,7 +42,7 @@ export default {
     .carousel button {
         border-radius: 20px;
     }
-    button {
+    .carousel button {
         position: absolute;
         height: 40px;
         width: 40px;

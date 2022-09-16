@@ -19,10 +19,9 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
     .carousel {
-        position: absolute;
         margin: 20px;
         top: 0;
         right: 0;
