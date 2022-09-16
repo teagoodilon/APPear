@@ -48,6 +48,12 @@
       />
     </b-row>
     </b-container>
+    <b-modal id="modalDeletar" hide-footer>
+      <div class="d-block text-center">
+        <h3>Item apagado com sucesso</h3>
+      </div>
+      <b-button @click="hide" class="mt-3 botaoModal" block>Ok</b-button>
+    </b-modal>
   </body>
 </template>
 
@@ -100,6 +106,14 @@
     rows() {
       return this.items.length
     }
+  },
+  methods: {
+    deletar(){
+      this.$bvModal.show("modalDeletar");
+    },
+    hide() {
+      this.$bvModal.hide("modalDeletar");
+    },
   }
 }
 
