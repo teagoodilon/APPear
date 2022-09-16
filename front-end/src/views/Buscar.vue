@@ -17,7 +17,7 @@
       <b-card-group deck>
         <b-card
         no-body
-        style="max-width: 13rem; margin-top: 30px;"
+        style="max-width: rem; margin-top: 30px;"
         img-src="https://placekitten.com/380/200"
         img-alt="Image"
         img-top
@@ -28,7 +28,7 @@
 
         <b-card
         no-body
-        style="max-width: 13rem; margin-top: 30px;"
+        style="max-width: rem; margin-top: 30px;"
         img-src="https://placekitten.com/381/200"
         img-alt="Image"
         img-top
@@ -39,7 +39,7 @@
 
         <b-card
         no-body
-        style="max-width: 13rem; margin-top: 30px;"
+        style="max-width: rem; margin-top: 30px;"
         img-src="https://placekitten.com/378/200"
         img-alt="Image"
         img-top
@@ -50,7 +50,7 @@
 
         <b-card
         no-body
-        style="max-width: 13rem; margin-top: 30px;"
+        style="max-width: rem; margin-top: 30px;"
         img-src="https://placekitten.com/365/200"
         img-alt="Image"
         img-top
@@ -62,7 +62,7 @@
       <b-card-group deck>
         <b-card
         no-body
-        style="max-width: 13rem; margin-top: 30px;"
+        style="max-width: rem; margin-top: 30px;"
         img-src="https://placekitten.com/380/200"
         img-alt="Image"
         img-top
@@ -73,7 +73,7 @@
 
         <b-card
         no-body
-        style="max-width: 13rem; margin-top: 30px;"
+        style="max-width: rem; margin-top: 30px;"
         img-src="https://placekitten.com/381/200"
         img-alt="Image"
         img-top
@@ -84,7 +84,7 @@
 
         <b-card
         no-body
-        style="max-width: 13rem; margin-top: 30px;"
+        style="max-width: rem; margin-top: 30px;"
         img-src="https://placekitten.com/378/200"
         img-alt="Image"
         img-top
@@ -95,7 +95,7 @@
 
         <b-card
         no-body
-        style="max-width: 13rem; margin-top: 30px;"
+        style="max-width: rem; margin-top: 30px;"
         img-src="https://placekitten.com/365/200"
         img-alt="Image"
         img-top
