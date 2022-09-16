@@ -1,13 +1,13 @@
 <template>
-  <TabelaItemPerdido />
+  <TabelaItemEncontrado />
 </template>
 
 <script>
-import TabelaItemPerdido from "../components/TabelaItemPerdido.vue"
+import TabelaItemEncontrado from "../components/TabelaItemEncontrado.vue"
 
 export default {
   components: {
-    TabelaItemPerdido
+    TabelaItemEncontrado
   }
 };
 </script>
