@@ -113,6 +113,7 @@
         console.error(err)
       });
       this.$bvModal.hide("modal-editar");
+      this.$forceUpdate();
     },
 
     editarItem(){
@@ -123,6 +124,7 @@
           console.error(err)
         });
       this.$bvModal.hide("modal-editar");
+      this.$forceUpdate();
 
     },
 

@@ -58,6 +58,7 @@
 </template>
 
 <script>
+  import {getItens, deleteItem, putItem} from "@/services/api/itemAprovar.js"
   export default {
     data() {
       return {
@@ -84,22 +85,7 @@
           thClass: 'th-buttons',
         },
       ],
-      items: [
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {situacao: 'Perdido', categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', buttons: 'nao'},
-      ]
+      items: []
     }
   },
   computed: {
@@ -109,12 +95,38 @@
   },
   methods: {
     deletar(){
-      this.$bvModal.show("modalDeletar");
+      deleteItem(this.dados.itemid)
+      .then(()=>{
+        alert('deletado')
+      }).catch((err)=>{
+        console.error(err)
+      });
+      this.$bvModal.hide("modal-editar");
+      this.$forceUpdate();
     },
-    hide() {
-      this.$bvModal.hide("modalDeletar");
+
+    editarItem(){
+      putItem(this.dados.itemid)
+        .then(()=>{
+          alert('editado')
+        }).catch((err)=>{
+          console.error(err)
+        });
+      this.$forceUpdate();
+
     },
-  }
+  },
+  mounted(){
+    getItens()
+      .then((res)=>{
+          this.items = res.data;
+      })
+      .catch((err)=>{
+          console.log(err);
+      });
+  },
+  
+
 }
 
 </script>

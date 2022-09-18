@@ -1,7 +1,7 @@
 //recber os dados
 //validadar os dados
 //chamar o servico
-import itemServices from "../services/item.services.js"
+import itemServices from "../services/itemAprovar.services.js"
 
 async function getItem(req, res){
     const itemid = req.params.itemid;
@@ -22,14 +22,8 @@ async function getItems(req, res){
 
 async function updateItem(req, res){
     const itemid = req.params.itemid
-    const novo = req.body
-
-    //validar dados
-    if(!novo.status || !novo.categoria || !novo.descricao || !novo.aprovado ||  !itemid ){
-        throw Error("FALTA DADO")
-    }
     //chamar servico
-    const retorno = await itemServices.updateItem(itemid, novo)
+    const retorno = await itemServices.updateItem(itemid)
     
     res.send(retorno)
     console.log(retorno)

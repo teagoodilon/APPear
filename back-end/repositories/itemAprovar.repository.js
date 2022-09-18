@@ -17,7 +17,7 @@ async function getItems(){
     
     const conn = await bd.conectar(); //await = espera o retorno do banco de dados
     try{
-        var query = await conn.query('SELECT * FROM item where aprovado = true')//retorno do BD e guarda em uma variavel
+        var query = await conn.query('SELECT * FROM item where aprovado = false')//retorno do BD e guarda em uma variavel
         return query.rows
     }catch(erro){
         console.log(erro)
@@ -25,12 +25,13 @@ async function getItems(){
     
 }
 
-async function updateItem(itemid, novo){
+async function updateItem(itemid){
 
     const conn = await bd.conectar();
     try{
-        let valores = [novo.status, novo.categoria, novo.descricao,novo.aprovado, itemid]
-        var query = await conn.query('UPDATE item SET status=$1, categoria=$2, descricao=$3, aprovado=$4 WHERE itemid=$5 RETURNING*', valores)//retorno do BD e guarda em uma variavel
+        var aprovado = true;
+        let valores = [aprovado, itemid];
+        var query = await conn.query('UPDATE item SET aprovado =$1 WHERE itemid=$2 RETURNING*', valores)//retorno do BD e guarda em uma variavel
         
         return query.rows  
     }catch(erro){
