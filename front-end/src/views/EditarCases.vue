@@ -9,7 +9,9 @@
         :per-page="perPage"
         :items="items"
         :fields="fields"
-        :current-page="currentPage">
+        :current-page="currentPage"
+        @row-clicked = "deletarCase">
+        
         <template #cell(buttons)>
           <div class="div-todos-ico">
               <div class="div-icones">
@@ -36,15 +38,15 @@
     </b-container>
     <b-modal id="modalDeletar" hide-footer>
       <div class="d-block text-center">
-        <h3>Item apagado com sucesso</h3>
+        <h3>Deseja remover o case?</h3>
       </div>
-      <b-button @click="hide" class="mt-3 botaoModal" block>Ok</b-button>
+      <b-button @click="deletar" class="mt-3 botaoModal" block>Sim</b-button>
     </b-modal>
   </body>
 </template>
 
 <script>
-  import {getCases} from "@/services/api/casesDeSucesso.js"
+  import {getCases,deleteCase} from "@/services/api/casesDeSucesso.js"
   export default {
     data() {
       return {
@@ -87,12 +89,21 @@
   },
   methods: {
     deletar(){
+      deleteCase(this.dados.itemid)
+      .then(()=>{
+        this.$bvModal.hide("modalDeletar");
+      }).catch((err)=>{
+        console.error(err)
+      });
+      
+    },
+    deletarCase(item){
+      this.dados = item;
       this.$bvModal.show("modalDeletar");
     },
-    hide() {
-      this.$bvModal.hide("modalDeletar");
-    },
   },
+
+  
 
   mounted(){
     getCases()
