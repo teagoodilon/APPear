@@ -3,19 +3,19 @@
 //chamar o servico
 import casesDeSucesso from "../services/casesDeSucesso.services.js"
 
-async function getcase(req, res){
+async function getCase(req, res){
     const itemid = req.params.itemid;
 
     //validar
     
     //chamar servico
-    const retorno = await casesDeSucesso.getcase(itemid)
+    const retorno = await casesDeSucesso.getCase(itemid)
     console.log(retorno)
     res.send(retorno)
 }
 
-async function getcases(req, res){           
-    const retorno = await casesDeSucesso.getcases() 
+async function getCases(req, res){           
+    const retorno = await casesDeSucesso.getCases() 
     console.log(retorno)
     res.send(retorno)
 }
@@ -56,8 +56,8 @@ async function deleteCase(req, res){
 
 
 export default {
-    getcase,
-    getcases,
+    getCase,
+    getCases,
     createCase,
     updateCase,
     deleteCase

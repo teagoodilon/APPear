@@ -44,6 +44,7 @@
 </template>
 
 <script>
+  import {getCases} from "@/services/api/casesDeSucesso.js"
   export default {
     data() {
       return {
@@ -64,9 +65,9 @@
           thClass: 'th-descricao',
         },
         {
-          key: 'dataFinalizacao',
+          key: 'datacase',
           label: 'Data da finalização',
-          tdClass: 'dataFinalizacao',
+          tdClass: 'datacase',
           thClass: 'th-dataFinalizacao',
         },
         {
@@ -76,22 +77,7 @@
           thClass: 'th-buttons',
         },
       ],
-      items: [
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001', buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', dataFinalizacao: '25/05/2001',buttons: 'nao'},
-      ]
+      items: []
     }
   },
   computed: {
@@ -106,7 +92,17 @@
     hide() {
       this.$bvModal.hide("modalDeletar");
     },
-  }
+  },
+
+  mounted(){
+    getCases()
+      .then((res)=>{
+          this.items = res.data;
+      })
+      .catch((err)=>{
+          console.log(err);
+      });
+  },
 }
 
 </script>

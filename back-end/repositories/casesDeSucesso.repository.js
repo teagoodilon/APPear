@@ -17,7 +17,7 @@ async function getCases(){
     
     const conn = await bd.conectar(); //await = espera o retorno do banco de dados
     try{
-        var query = await conn.query('SELECT * FROM cases')//retorno do BD e guarda em uma variavel
+        var query = await conn.query('SELECT i.categoria, i.descricao, c.dataCase from item i INNER JOIN cases c on c.itemid = i.itemid;')//retorno do BD e guarda em uma variavel
     }catch(erro){
         console.log(erro)
     }
