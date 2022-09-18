@@ -9,7 +9,8 @@
         :per-page="perPage"
         :items="items"
         :fields="fields"
-        :current-page="currentPage">
+        :current-page="currentPage"
+        @row-clicked = "editar">
         <template #cell(buttons)>
           <div class="div-todos-ico">
               <div class="div-icones">
@@ -36,17 +37,27 @@
         </template>
       </b-table>
       </b-row>
-    <b-row class="justify-content-end">
-      <b-pagination
-        v-model="currentPage"
-        :total-rows="rows"
-        :per-page="perPage"
-        first-number
-        last-number
-        class="pagination"
-        style="margin-right: 90px; margin-bottom: 22px; padding-right:15px;"
-      />
-    </b-row>
+
+      <b-modal id = "modal-editar" hide-footer>
+          <template #modal-title>
+            Aprovar Item
+          </template>
+
+          <b-button @click="deletar" class="mt-3 botaoModal" block>Excluir</b-button>
+          <b-button @click="editarItem" class="mt-3 botaoModal" block>Aprovar</b-button>
+        </b-modal>
+
+      <b-row class="justify-content-end">
+        <b-pagination
+          v-model="currentPage"
+          :total-rows="rows"
+          :per-page="perPage"
+          first-number
+          last-number
+          class="pagination"
+          style="margin-right: 90px; margin-bottom: 22px; padding-right:15px;"
+        />
+      </b-row>
     </b-container>
     <b-modal id="modalDeletar" hide-footer>
       <div class="d-block text-center">
@@ -97,11 +108,13 @@
     deletar(){
       deleteItem(this.dados.itemid)
       .then(()=>{
-        alert('deletado')
+        this.$bvModal.hide("modal-editar");
+        this.$bvModal.show("modalDeletar");
       }).catch((err)=>{
         console.error(err)
+        this.$bvModal.hide("modal-editar");
       });
-      this.$bvModal.hide("modal-editar");
+      
       this.$forceUpdate();
     },
 
@@ -115,6 +128,11 @@
       this.$forceUpdate();
 
     },
+
+    editar(item){
+      this.dados = item;
+      this.$bvModal.show("modal-editar");
+    }
   },
   mounted(){
     getItens()
