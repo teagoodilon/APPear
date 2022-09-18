@@ -43,8 +43,7 @@ async function createItem(novo){
     const conn = await bd.conectar();
     try{
         var aprovado = false;
-        var status = "perdido";
-        let valores = [novo.categoria, novo.descricao, novo.data, novo.fotos, status, aprovado]
+        let valores = [novo.categoria, novo.descricao, novo.data, novo.fotos, novo.status, aprovado]
         var query = await conn.query('INSERT INTO item (categoria,descricao,data, fotos, status,aprovado) VALUES ($1,$2,$3,$4,$5,$6) returning*', valores)//retorno do BD e guarda em uma variavel
         //console.log("========" + JSON.stringify(query.rows))
     }catch(erro){

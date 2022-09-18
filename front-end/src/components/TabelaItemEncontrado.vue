@@ -4,6 +4,7 @@
     <h2>Cadastrar item encontrado</h2>
     <b-card id="card">
       <form action="http://localhost:3000/item" method="post">
+        <input type="text" id="status" name="status" value= "encontrao" hidden>
         <label for="categoria">Categoria do item:</label><br>
         <b-form-select
         :options="[{ text: 'Selecione a categoria do item', value:null}, 'Vestuário', 'Eletrônico', 'Acessório', 'Documento', 'Outros']"
