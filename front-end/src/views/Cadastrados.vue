@@ -43,7 +43,10 @@
           <b-form-input v-model = "dados.descricao" class="mt-2"></b-form-input>
 
           <b-button @click="deletar" class="mt-3 botaoModal" block>Excluir</b-button>
-          <b-button @click="editarItem" class="mt-3 botaoModal" block>Editar</b-button>
+          <b-button @click="editarItem" class="mt-3 botaoModal" block>Editar </b-button>
+          <b-button @click="createCase" class="mt-3 botaoModal" block>Finalizar</b-button>
+          
+
         </b-modal>
       </b-row>
       <b-row class="justify-content-end">
@@ -63,6 +66,8 @@
 
 <script>
   import {getItens, deleteItem, putItem} from "@/services/api/item.js"
+  import {postCase} from "@/services/api/casesDeSucesso.js"
+  
   export default {
     data() {
       return {
@@ -120,10 +125,12 @@
       putItem(this.dados.itemid,this.dados)
         .then(()=>{
           alert('editado')
+          this.$bvModal.hide("modal-editar");
         }).catch((err)=>{
           console.error(err)
+          this.$bvModal.hide("modal-editar");
         });
-      this.$bvModal.hide("modal-editar");
+      
       this.$forceUpdate();
 
     },
@@ -131,8 +138,19 @@
     editar(item){
       this.dados = item;
       this.$bvModal.show("modal-editar");
+    },
+
+    createCase(){
+      postCase(this.dados)
+      .then(()=>{
+          alert('ENVIADO PARA CASE DE SUCESSO')
+        }).catch((err)=>{
+          console.error(err)
+        });
+      this.$bvModal.hide("modal-editar");
+      this.$forceUpdate();
     }
-    
+
   },
  
   mounted(){

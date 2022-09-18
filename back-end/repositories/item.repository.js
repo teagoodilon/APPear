@@ -17,7 +17,7 @@ async function getItems(){
     
     const conn = await bd.conectar(); //await = espera o retorno do banco de dados
     try{
-        var query = await conn.query('SELECT * FROM item where aprovado = true')//retorno do BD e guarda em uma variavel
+        var query = await conn.query(' select * from item where itemid = (SELECT itemid FROM item EXCEPT SELECT itemid FROM cases);')//retorno do BD e guarda em uma variavel
         return query.rows
     }catch(erro){
         console.log(erro)
