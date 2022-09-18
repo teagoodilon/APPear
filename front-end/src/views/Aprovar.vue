@@ -65,6 +65,12 @@
       </div>
       <b-button @click="hide" class="mt-3 botaoModal" block>Ok</b-button>
     </b-modal>
+    <b-modal id="modalEditado" hide-footer>
+      <div class="d-block text-center">
+        <h3>Item Aprovado</h3>
+      </div>
+      <b-button @click="hide" class="mt-3 botaoModal" block>Ok</b-button>
+    </b-modal>
   </body>
 </template>
 
@@ -121,7 +127,8 @@
     editarItem(){
       putItem(this.dados.itemid)
         .then(()=>{
-          alert('editado')
+          this.$bvModal.hide("modal-editar");
+          this.$bvModal.show("modalEditado");
         }).catch((err)=>{
           console.error(err)
         });
