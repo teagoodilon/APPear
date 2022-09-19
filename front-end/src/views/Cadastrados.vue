@@ -197,7 +197,7 @@ thead{
   font-family: Montserrat;
 }
 
-.situacao, .categoria, .descricao, .buttons, .perca, .encontro, .dataFinalizacao{
+.status, .categoria, .descricao, .buttons, .perca, .encontro, .dataFinalizacao{
   border-right: 3px solid#042d5b !important;
   border-left: 3px solid#042d5b !important;
   text-align: center;
