@@ -44,7 +44,7 @@
 
           <b-button @click="deletar" class="mt-3 botaoModal" block>Excluir</b-button>
           <b-button @click="editarItem" class="mt-3 botaoModal" block>Editar </b-button>
-          <b-button @click="createCase" class="mt-3 botaoModal" block>Finalizar</b-button>
+          <b-button @click="devolve" class="mt-3 botaoModal" block>Finalizar</b-button>
           
 
         </b-modal>
@@ -66,7 +66,7 @@
 
 <script>
   import {getItens, deleteItem, putItem} from "@/services/api/item.js"
-  import {postCase} from "@/services/api/casesDeSucesso.js"
+  import {postDevolucao} from "@/services/api/devolucao.js"
   
   export default {
     data() {
@@ -140,10 +140,10 @@
       this.$bvModal.show("modal-editar");
     },
 
-    createCase(){
-      postCase(this.dados)
+    devolve(){
+      postDevolucao(this.dados)
       .then(()=>{
-          alert('ENVIADO PARA CASE DE SUCESSO')
+          alert('ENVIADO PARA devolucao')
         }).catch((err)=>{
           console.error(err)
         });

@@ -9,7 +9,8 @@
         :per-page="perPage"
         :items="items"
         :fields="fields"
-        :current-page="currentPage">
+        :current-page="currentPage"
+        @row-clicked = "editar">
         <template #cell(buttons)>
           <div class="div-todos-ico">
               <div class="div-icones">
@@ -27,6 +28,15 @@
             </div>
         </template>
       </b-table>
+      <b-modal id = "modal-editar" hide-footer>
+          <template #modal-title>
+            Itens Devolvidos
+          </template> 
+          <b-button @click="deletar" class="mt-3 botaoModal" block>Excluir</b-button>
+          <b-button @click="createCase" class="mt-3 botaoModal" block>Finalizar</b-button>
+          
+
+        </b-modal>
       </b-row>
     <b-row class="justify-content-end">
       <b-pagination
@@ -44,6 +54,8 @@
 </template>
 
 <script>
+  import {getDevolucaos,deleteDevolucao} from "@/services/api/devolucao.js"
+  import {postCase} from "@/services/api/casesDeSucesso.js"
   export default {
     data() {
       return {
@@ -64,13 +76,13 @@
           thClass: 'th-descricao',
         },
         {
-          key: 'perca',
+          key: 'data',
           label: 'Perca',
-          tdClass: 'perca',
+          tdClass: 'data',
           thClass: 'th-perca',
         },
         {
-          key: 'encontro',
+          key: 'datadevolucao',
           label: 'Encontro',
           tdClass: 'encontro',
           thClass: 'th-encontro',
@@ -82,29 +94,58 @@
           thClass: 'th-buttons',
         },
       ],
-      items: [
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001' ,buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001' ,buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001', buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001',  buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001',  buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001',  buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001', buttons: 'nao'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001', buttons: 'sim'},
-        {categoria: 'camisa', descricao: 'Camisa da marca champion, verde em bom estado', perca: '25/05/2001', encontro: '30/05/2001', buttons: 'nao'},
-      ]
+      items: []
     }
   },
   computed: {
     rows() {
       return this.items.length
     }
-  }
+  },
+
+  methods: {
+    deletar(){
+      deleteDevolucao(this.dados.itemid)
+      .then(()=>{
+        this.$bvModal.hide("modalDeletar");
+      }).catch((err)=>{
+        console.error(err)
+      });
+      
+    },
+    deletarDevolucao(item){
+      this.dados = item;
+      this.$bvModal.show("modalDeletar");
+    },
+
+    createCase(){
+      postCase(this.dados)
+      .then(()=>{
+          alert('ENVIADO PARA devolucao')
+        }).catch((err)=>{
+          console.error(err)
+        });
+      this.$bvModal.hide("modal-editar");
+      this.$forceUpdate();
+    },
+
+    editar(item){
+      this.dados = item;
+      this.$bvModal.show("modal-editar");
+    },
+  },
+
+  
+
+  mounted(){
+    getDevolucaos()
+      .then((res)=>{
+          this.items = res.data;
+      })
+      .catch((err)=>{
+          console.log(err);
+      });
+  },
 }
 
 </script>

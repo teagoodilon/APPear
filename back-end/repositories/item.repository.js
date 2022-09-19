@@ -17,7 +17,7 @@ async function getItems(){
     
     const conn = await bd.conectar(); //await = espera o retorno do banco de dados
     try{
-        var query = await conn.query(' select * from item where itemid = (SELECT itemid FROM item EXCEPT SELECT itemid FROM cases);')//retorno do BD e guarda em uma variavel
+        var query = await conn.query('select itemid, status, categoria, descricao, data from item except SELECT d.itemid,i.status,  i.categoria, i.descricao, i.data from item i INNER JOIN devolucao d on d.itemid = i.itemid order by itemid;')//retorno do BD e guarda em uma variavel
         return query.rows
     }catch(erro){
         console.log(erro)

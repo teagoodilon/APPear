@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import itemRoutes from "./routes/item.routes.js"
 import itemAProvarRoutes from "./routes/itemAprovar.routes.js"
 import casesRoutes from "./routes/casesDeSucesso.routes.js"
+import devolucaoRoutes from "./routes/devolucao.routes.js"
 import cors from "cors";
 
 const app = express();
@@ -13,4 +14,5 @@ app.use(bodyParser.urlencoded({extended : true}))
 app.use("/item", itemRoutes)
 app.use("/itemAprovar", itemAProvarRoutes)
 app.use("/casesdesucesso", casesRoutes)
+app.use("/devolucao", devolucaoRoutes)
 app.listen(3000, () => {console.log("Servidor Executando !!!")})
