@@ -43,7 +43,10 @@
           <b-form-input v-model = "dados.descricao" class="mt-2"></b-form-input>
 
           <b-button @click="deletar" class="mt-3 botaoModal" block>Excluir</b-button>
-          <b-button @click="editarItem" class="mt-3 botaoModal" block>Editar</b-button>
+          <b-button @click="editarItem" class="mt-3 botaoModal" block>Editar </b-button>
+          <b-button @click="devolve" class="mt-3 botaoModal" block>Finalizar</b-button>
+          
+
         </b-modal>
       </b-row>
       <b-row class="justify-content-end">
@@ -63,6 +66,8 @@
 
 <script>
   import {getItens, deleteItem, putItem} from "@/services/api/item.js"
+  import {postDevolucao} from "@/services/api/devolucao.js"
+  
   export default {
     data() {
       return {
@@ -113,24 +118,39 @@
         console.error(err)
       });
       this.$bvModal.hide("modal-editar");
+      this.$forceUpdate();
     },
 
     editarItem(){
       putItem(this.dados.itemid,this.dados)
         .then(()=>{
           alert('editado')
+          this.$bvModal.hide("modal-editar");
         }).catch((err)=>{
           console.error(err)
+          this.$bvModal.hide("modal-editar");
         });
-      this.$bvModal.hide("modal-editar");
+      
+      this.$forceUpdate();
 
     },
 
     editar(item){
       this.dados = item;
       this.$bvModal.show("modal-editar");
+    },
+
+    devolve(){
+      postDevolucao(this.dados)
+      .then(()=>{
+          alert('ENVIADO PARA devolucao')
+        }).catch((err)=>{
+          console.error(err)
+        });
+      this.$bvModal.hide("modal-editar");
+      this.$forceUpdate();
     }
-    
+
   },
  
   mounted(){
@@ -177,7 +197,7 @@ thead{
   font-family: Montserrat;
 }
 
-.situacao, .categoria, .descricao, .buttons, .perca, .encontro, .dataFinalizacao{
+.status, .categoria, .descricao, .buttons, .perca, .encontro, .dataFinalizacao{
   border-right: 3px solid#042d5b !important;
   border-left: 3px solid#042d5b !important;
   text-align: center;

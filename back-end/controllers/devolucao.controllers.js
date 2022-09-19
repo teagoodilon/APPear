@@ -1,26 +1,26 @@
 //recber os dados
 //validadar os dados
 //chamar o servico
-import casesDeSucesso from "../services/casesDeSucesso.services.js"
+import devolucao from "../services/devolucao.services.js"
 
-async function getCase(req, res){
+async function getDevolucao(req, res){
     const itemid = req.params.itemid;
 
     //validar
     
     //chamar servico
-    const retorno = await casesDeSucesso.getCase(itemid)
+    const retorno = await devolucao.getDevolucao(itemid)
     console.log(retorno)
     res.send(retorno)
 }
 
-async function getCases(req, res){           
-    const retorno = await casesDeSucesso.getCases() 
+async function getDevolucaos(req, res){           
+    const retorno = await devolucao.getDevolucaos() 
     console.log(retorno)
     res.send(retorno)
 }
 
-async function updateCase(req, res){
+async function updateDevolucao(req, res){
     const itemid = req.params.itemid
     const novo = req.body
 
@@ -30,35 +30,35 @@ async function updateCase(req, res){
     }
 
     //chamar servico
-    const retorno = await casesDeSucesso.updateCase(itemid, novo)
+    const retorno = await devolucao.updateDevolucao(itemid, novo)
     res.send(retorno)
     console.log(retorno)
 }
 
-async function createCase(req, res){
+async function createDevolucao(req, res){
     const novo = req.body;
     //validar os dados
     //TO DO
 
     //chamar servico
-    const retorno = await casesDeSucesso.createCase(novo)    
+    const retorno = await devolucao.createDevolucao(novo)    
     console.log(retorno)
     res.send(retorno)
 }
 
-async function deleteCase(req, res){
+async function deleteDevolucao(req, res){
     const itemid = req.params.itemid;
     
-    const retorno = await casesDeSucesso.deleteCase(itemid)
+    const retorno = await devolucao.deleteDevolucao(itemid)
     console.log(retorno)
     res.send(retorno)
 }
 
 
 export default {
-    getCase,
-    getCases,
-    createCase,
-    updateCase,
-    deleteCase
+    getDevolucao,
+    getDevolucaos,
+    createDevolucao,
+    updateDevolucao,
+    deleteDevolucao
 }
