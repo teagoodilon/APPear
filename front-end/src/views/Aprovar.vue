@@ -20,14 +20,6 @@
                 </b>
               </div>
               <div class="div-icones">
-                <a @click.prevent="excluir" >
-                  <b class="margem-entre">
-                    <b-icon-camera class="icons" scale="1.2" />
-                    <b class="fotos">fotos</b>
-                  </b>
-                </a>
-              </div>
-              <div class="div-icones">
                 <a>
                   <b-icon-trash class="icons" scale="1"/>
                   <b class="excluir">excluir</b>
@@ -67,9 +59,9 @@
     </b-modal>
     <b-modal id="modalEditado" hide-footer>
       <div class="d-block text-center">
-        <h3>Item Aprovado</h3>
+        <h3>Item Aprovado!</h3>
       </div>
-      <b-button @click="hide" class="mt-3 botaoModal" block>Ok</b-button>
+      <b-button @click="hide2" class="mt-3 botaoModal" block>Ok</b-button>
     </b-modal>
   </body>
 </template>
@@ -120,8 +112,7 @@
         console.error(err)
         this.$bvModal.hide("modal-editar");
       });
-      
-      this.$forceUpdate();
+      location.reload();
     },
 
     editarItem(){
@@ -132,16 +123,22 @@
         }).catch((err)=>{
           console.error(err)
         });
-      this.$forceUpdate();
-
+        location.reload();
     },
 
     editar(item){
       this.dados = item;
       this.$bvModal.show("modal-editar");
+    },
+    hide(){
+      this.$bvModal.hide("modalDeletar");
+    },
+    hide2(){
+      this.$bvModal.hide("modalEditado");
     }
   },
   mounted(){
+
     getItens()
       .then((res)=>{
           this.items = res.data;

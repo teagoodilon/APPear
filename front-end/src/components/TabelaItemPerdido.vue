@@ -1,5 +1,4 @@
 <template>
-
   <body>
     <h2>Cadastrar item perdido</h2>
     <b-card id="card">
@@ -48,7 +47,7 @@
   position: absolute;
   display: flex;
   font-family: MontSerrat;
-  font-size: 20px;
+  font-size: 15px;
   width: 70%;
   background-color: #343434;
 }

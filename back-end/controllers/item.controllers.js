@@ -25,9 +25,9 @@ async function updateItem(req, res){
     const novo = req.body
 
     //validar dados
-    if(!novo.status || !novo.categoria || !novo.descricao || !novo.aprovado ||  !itemid ){
+    /*if(!novo.status || !novo.categoria || !novo.descricao || !novo.aprovado ||  !itemid ){
         throw Error("FALTA DADO")
-    }
+    }*/
     //chamar servico
     const retorno = await itemServices.updateItem(itemid, novo)
     
