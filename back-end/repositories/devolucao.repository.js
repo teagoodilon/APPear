@@ -17,7 +17,7 @@ async function getDevolucaos(){
     
     const conn = await bd.conectar(); //await = espera o retorno do banco de dados
     try{
-        var query = await conn.query('SELECT d.itemid, i.categoria, i.descricao, i.data ,d.datadevolucao from item i INNER JOIN devolucao d on d.itemid = i.itemid order by itemid;')//retorno do BD e guarda em uma variavel
+        var query = await conn.query('SELECT d.itemid, i.categoria, i.descricao, i.data ,d.datadevolucao from item i INNER JOIN devolucao d on d.itemid = i.itemid EXCEPT SELECT c.itemid, j.categoria, j.descricao, j.data, c.dataCase from item j INNER JOIN cases c on c.itemid = j.itemid order by itemid; ')//retorno do BD e guarda em uma variavel
     }catch(erro){
         console.log(erro)
     }
